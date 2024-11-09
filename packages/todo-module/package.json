@@ -1,0 +1,70 @@
+{
+  "name": "@todo/module",
+  "version": "1.0.0",
+  "description": "",
+  "repository": "",
+  "license": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run prepack",
+    "prepack": "nuxt-module-build build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && git push --follow-tags",
+    "lint": "npm run lint:eslint && npm run lint:prettier && npm run lint:stylelint",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --write \"**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts,css,scss,less,md,json}\" --ignore-path .prettierignore",
+    "lint:stylelint": "stylelint --fix \"**/*.{vue,css,less,scss,html}\" --ignore-path .stylelintignore",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit",
+    "update": "ncu --interactive --format group"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.14.159"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^1.6.0",
+    "@nuxt/eslint-config": "^0.6.1",
+    "@nuxt/module-builder": "^0.8.4",
+    "@nuxt/schema": "^3.14.159",
+    "@nuxt/test-utils": "^3.14.4",
+    "@types/node": "latest",
+    "changelogen": "^0.5.7",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "stylelint": "^16.9.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-rational-order-fix": "^0.1.9",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-config-standard-vue": "^1.0.0",
+    "stylelint-order": "^6.0.4",
+    "nuxt": "^3.14.159",
+    "sass": "^1.80.6",
+    "sass-loader": "^16.0.3",
+    "typescript": "latest",
+    "vitest": "^2.1.4",
+    "vue-tsc": "^2.1.10"
+  },
+  "volta": {
+    "node": "20.13.1"
+  },
+  "engines": {
+    "node": ">= 20"
+  }
+}

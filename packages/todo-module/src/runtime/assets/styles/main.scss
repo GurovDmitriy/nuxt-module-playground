@@ -1,0 +1,11 @@
+:root {
+  --todo-bg-main: lightblue;
+  --todo-primary: lightgreen;
+}
+
+html,
+body {
+  font-size: 16px;
+
+  background: var(--todo-bg-main);
+}

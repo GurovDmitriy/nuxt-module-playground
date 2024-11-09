@@ -1,0 +1,14 @@
+image: node:20
+
+pipelines:
+  default:
+    - step:
+        name: Lint
+        script:
+          - npm install
+          - npm run lint
+    - step:
+        name: Tests
+        script:
+          - npm install
+          - npm run test

@@ -1,0 +1,10 @@
+:root {
+  --bg-main-test: lightgreen;
+}
+
+html,
+body {
+  font-size: 16px;
+
+  background: var(--bg-main-test);
+}
