@@ -17,7 +17,7 @@
     },
     "build": {
       "dependsOn": ["test"],
-      "inputs": ["all", "^build"],
+      "inputs": ["all"],
       "cache": true
     }
   },

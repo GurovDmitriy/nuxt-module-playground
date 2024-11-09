@@ -14,8 +14,11 @@ export default defineNuxtModule({
   defaults: {},
   setup(_options, _nuxt) {
     const resolver = createResolver(import.meta.url)
-    const isDevelopment = process.env.NODE_ENV === "development"
-    const mainStyleFile = isDevelopment
+    const runtimeDir = resolver.resolve("./runtime")
+    const isDevelopment =
+      runtimeDir.endsWith("src/runtime") || runtimeDir.endsWith("src\\runtime")
+
+    const styles = isDevelopment
       ? "./runtime/assets/styles/main.scss"
       : "./runtime/assets/styles/main.css"
 
@@ -26,6 +29,6 @@ export default defineNuxtModule({
       filePath: resolver.resolve("./runtime/components/TodoList/TodoList.vue"),
     })
 
-    _nuxt.options.css.push(resolver.resolve(mainStyleFile))
+    _nuxt.options.css.unshift(resolver.resolve(styles))
   },
 })
