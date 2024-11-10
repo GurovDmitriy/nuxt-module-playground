@@ -4,7 +4,6 @@
   <div>
     <div>Page Home</div>
     <div>Todo List Module</div>
-
-    <!--    <TodoList></TodoList>-->
+    <TodoList></TodoList>
   </div>
 </template>

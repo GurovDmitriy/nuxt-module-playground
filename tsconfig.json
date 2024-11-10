@@ -5,7 +5,7 @@
     "moduleResolution": "NodeNext",
     "baseUrl": ".",
     "paths": {
-      "@onlypay/*": ["packages/*"]
+      "@todo/*": ["packages/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
