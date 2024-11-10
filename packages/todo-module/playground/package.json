@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
-    "generate": "nuxi generate"
+    "generate": "nuxi generate",
+    "start": "node .output/server/index.mjs",
+    "preview": "npx serve .output/public"
   },
   "dependencies": {
     "nuxt": "^3.14.159"

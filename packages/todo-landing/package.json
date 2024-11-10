@@ -1,7 +1,7 @@
 {
   "name": "@todo/todo-landing",
   "description": "",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
     "build:lint": "npm run lint && npm run build",
     "generate": "nuxt generate",
     "start": "node .output/server/index.mjs",
-    "preview": "nuxt preview",
+    "preview": "npx serve .output/public",
     "test:unit": "vitest --run",
     "test:e2e": "playwright test",
     "lint": "npm run lint:eslint && npm run lint:prettier && npm run lint:stylelint",
