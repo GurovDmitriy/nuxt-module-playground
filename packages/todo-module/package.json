@@ -23,7 +23,6 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && git push --follow-tags",
     "lint": "npm run lint:eslint && npm run lint:prettier && npm run lint:stylelint",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --write \"**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts,css,scss,less,md,json}\" --ignore-path .prettierignore",
