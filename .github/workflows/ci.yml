@@ -24,7 +24,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm i
+        run: npm ci
 
       - name: Lint
         run: npm run lint
@@ -42,7 +42,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm i
+        run: npm ci
 
       - name: Playground prepare
         run: npm run dev:prepare
@@ -64,7 +64,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm i
+        run: npm ci
 
       - name: Build
         run: npm run build
