@@ -24,7 +24,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@todo/todo-module": "^0.1.0",
+    "@todo/todo-module": "*",
     "@nuxt/image": "^1.8.0",
     "@pinia/nuxt": "^0.5.4",
     "@vueuse/core": "^11.1.0",
