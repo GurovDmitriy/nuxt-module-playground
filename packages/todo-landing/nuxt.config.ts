@@ -93,7 +93,7 @@ export default defineNuxtConfig({
     "@nuxt/test-utils/module",
     "nuxt-svgo",
     "nuxt-viewport",
-    "../todo-module/dist",
+    "../todo-module/dist/module",
   ],
 
   svgo: {
