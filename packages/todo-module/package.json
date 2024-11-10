@@ -28,7 +28,7 @@
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --write \"**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts,css,scss,less,md,json}\" --ignore-path .prettierignore",
     "lint:stylelint": "stylelint --fix \"**/*.{vue,css,less,scss,html}\" --ignore-path .stylelintignore",
-    "test": "vitest run",
+    "test": "npm run dev:prepare && vitest run",
     "test:watch": "vitest watch",
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit",
     "update": "ncu --interactive --format group"
