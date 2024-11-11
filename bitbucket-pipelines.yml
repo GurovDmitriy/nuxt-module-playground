@@ -1,14 +1,22 @@
-image: node:20
+image: node:20.18.0
 
 pipelines:
   default:
     - step:
         name: Lint
         script:
-          - npm install
+          - npm run root:prepare
+          - npm ci
           - npm run lint
     - step:
         name: Tests
         script:
-          - npm install
+          - npm run root:prepare
+          - npm ci
           - npm run test
+    - step:
+        name: Build
+        script:
+          - npm run root:prepare
+          - npm ci
+          - npm run build

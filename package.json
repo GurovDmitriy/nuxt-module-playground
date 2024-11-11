@@ -23,7 +23,7 @@
     "packages/*"
   ],
   "scripts": {
-    "root:prepare": "cd packages/todo-module && npm i && npm run dev:prepare && npm run build && cd .. && npm i",
+    "root:prepare": "cd packages/todo-module && npm ci && npm run dev:prepare && npm run build && cd .. && npm ci",
     "dev": "npx lerna watch -- lerna run build --since",
     "build": "npx lerna run build",
     "semver": "npx lerna version",
