@@ -13,7 +13,7 @@ on:
       - dev
 
 jobs:
-  lint:
+  setup:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,7 +21,24 @@ jobs:
       - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20.18.0
+
+      - name: Prepare modules
+        run: npm run root:prepare
+
+      - name: Install root dependencies
+        run: npm ci
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: [ setup ]
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.18.0
 
       - name: Install dependencies
         run: npm ci
@@ -32,14 +49,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    needs: [ lint ]
+    needs: [ setup, lint ]
 
     steps:
       - uses: actions/checkout@v4
       - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20.18.0
 
       - name: Install dependencies
         run: npm ci
@@ -51,14 +68,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    needs: [ lint, test ]
+    needs: [ setup, lint, test ]
 
     steps:
       - uses: actions/checkout@v4
       - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20.18.0
 
       - name: Install dependencies
         run: npm ci
