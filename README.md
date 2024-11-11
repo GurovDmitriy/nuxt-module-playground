@@ -1,1 +1,1 @@
-# OnlyPay
+# Nuxt Module Playground
