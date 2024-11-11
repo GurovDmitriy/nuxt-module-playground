@@ -23,8 +23,10 @@
     "packages/*"
   ],
   "scripts": {
+    "root:prepare": "cd packages/todo-module && npm i && npm run dev:prepare && npm run build && cd .. && npm i",
     "dev": "npx lerna watch -- lerna run build --since",
-    "build": "npm run lint:prettier && npx lerna run build",
+    "build": "npx lerna run build",
+    "semver": "npx lerna version",
     "test": "npx lerna run test",
     "lint": "npm run lint:prettier && npx lerna run lint",
     "lint:prettier": "prettier --write \"**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,md,json}\" --ignore-path .prettierignore",

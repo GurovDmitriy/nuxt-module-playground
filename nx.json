@@ -10,14 +10,14 @@
       "inputs": ["^public"],
       "cache": true
     },
-    "test": {
+    "build": {
       "dependsOn": ["lint"],
       "inputs": ["all", "^public"],
       "cache": true
     },
-    "build": {
-      "dependsOn": ["test"],
-      "inputs": ["all"],
+    "test": {
+      "dependsOn": ["build"],
+      "inputs": ["all", "^public"],
       "cache": true
     }
   },
